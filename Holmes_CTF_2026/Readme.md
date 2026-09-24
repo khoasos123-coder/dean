@@ -10,12 +10,14 @@
 
 ### Câu 1: To which directory does the application copy the files bundled within the extraResources folder?
 * **Phân tích:** Giải nén `app.asar`:
-```bash
-npx @electron/asar
-extract app.asar
-./app_extracted
-```
+
+
+<img width="630" height="300" alt="image" src="https://github.com/user-attachments/assets/d9325a48-18a0-481b-a9ca-957e68d0ea3f" />
+
+
 Kiểm tra source code JavaScript trong thư mục giải nén:
+<img width="653" height="502" alt="image" src="https://github.com/user-attachments/assets/b3bfc873-7599-4f07-82ac-35399061cb2b" />
+
 ```javascript
 fs.readdirSync(path.resolve(`${process.resourcesPath}/../extraResources`)).forEach(f => 
     fs.copyFileSync(path.resolve(`${process.resourcesPath}/../extraResources`, f), path.join('C:\\Users\\Public', f))
